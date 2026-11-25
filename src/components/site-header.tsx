@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/logo";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { site } from "@/lib/site";
 
@@ -36,6 +37,7 @@ export function SiteHeader() {
       ref={header}
       className="sticky top-0 z-20 border-b border-line bg-bg"
     >
+      <ScrollProgress />
       <div className="shell flex h-18 items-center gap-3 md:gap-8">
         <Link
           href="/"
@@ -50,10 +52,7 @@ export function SiteHeader() {
           <ul className="flex gap-7">
             {site.nav.map(({ href, label }) => (
               <li key={href}>
-                <Link
-                  href={href}
-                  className="py-2 decoration-accent decoration-2 underline-offset-8 hover:underline"
-                >
+                <Link href={href} className="nav-link py-2">
                   {label}
                 </Link>
               </li>
@@ -87,7 +86,7 @@ export function SiteHeader() {
         id="menu-mobile"
         aria-label="Điều hướng trên điện thoại"
         hidden={!open}
-        className="absolute inset-x-0 top-full border-b border-line bg-surface px-6 py-3 md:hidden"
+        className="menu-drop absolute inset-x-0 top-full border-b border-line bg-surface px-6 py-3 md:hidden"
       >
         <ul className="divide-y divide-line">
           {site.nav.map(({ href, label }) => (

@@ -46,8 +46,17 @@ export function ThemeToggle() {
     <div
       role="group"
       aria-label="Chế độ giao diện"
-      className="flex gap-0.5 rounded-full border border-line bg-surface p-1"
+      className="relative flex gap-0.5 rounded-full border border-line bg-surface p-1"
     >
+      {hydrated && (
+        <span
+          aria-hidden="true"
+          className="absolute top-1 left-1 size-9 rounded-full bg-accent transition-transform duration-400 ease-out motion-reduce:transition-none"
+          style={{
+            transform: `translateX(${options.findIndex((option) => option.value === theme) * 2.375}rem)`,
+          }}
+        />
+      )}
       {options.map(({ value, label, icon }) => (
         <button
           key={value}
@@ -56,7 +65,7 @@ export function ThemeToggle() {
           aria-pressed={hydrated && theme === value}
           title={label}
           onClick={() => setTheme(value)}
-          className="grid size-9 cursor-pointer place-items-center rounded-full text-muted hover:text-ink aria-pressed:bg-accent aria-pressed:text-accent-ink"
+          className="relative grid size-9 cursor-pointer place-items-center rounded-full text-muted hover:text-ink transition-colors aria-pressed:text-accent-ink"
         >
           <svg
             aria-hidden="true"
