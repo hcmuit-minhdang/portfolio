@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import type { CSSProperties } from "react";
-import { HeroGlow } from "@/components/hero-glow";
 import { useLanguage } from "@/components/language-provider";
 import { Parallax } from "@/components/parallax";
 import { Replay } from "@/components/replay";
+import { SkyBackground } from "@/components/sky-background";
 import { Tilt } from "@/components/tilt";
 import { site } from "@/lib/site";
 
@@ -40,7 +40,7 @@ export function Hero() {
 
   return (
     <section className="relative grid min-h-[calc(100svh-4.5rem)] items-center overflow-hidden">
-      <HeroGlow />
+      <SkyBackground />
 
       <div className="relative shell grid items-center gap-12 py-16 md:py-20 lg:grid-cols-[1fr_22rem] lg:gap-16 xl:grid-cols-[1fr_26rem] xl:gap-24">
         <div className="grid gap-8">

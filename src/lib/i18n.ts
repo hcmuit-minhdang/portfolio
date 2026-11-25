@@ -37,6 +37,18 @@ export const messages = {
       sub: "Interested in backend, data, and AI.",
       viewProjects: "View projects",
     },
+    sky: {
+      toggleHint: "Click to preview sky across the day (Vietnam time)",
+      preview: "Preview",
+      phases: {
+        dawn: "Dawn",
+        morning: "Morning",
+        midday: "Midday",
+        sunset: "Sunset",
+        dusk: "Dusk",
+        night: "Night",
+      },
+    },
     about: {
       heading: "About",
       leadBefore: "I enjoy ",
@@ -75,7 +87,6 @@ export const messages = {
       leadBefore: "Prioritizing clarity, from ",
       leadHighlight: "thinking to code.",
       languagesHeading: "Languages",
-      processHeading: "How I work",
     },
     contact: {
       heading: "Contact",
@@ -119,6 +130,18 @@ export const messages = {
       sub: "Mình quan tâm đến backend, data và AI.",
       viewProjects: "Xem dự án",
     },
+    sky: {
+      toggleHint: "Bấm để xem thử bầu trời các khung giờ trong ngày (giờ Việt Nam)",
+      preview: "Xem thử",
+      phases: {
+        dawn: "Bình minh",
+        morning: "Buổi sáng",
+        midday: "Buổi trưa",
+        sunset: "Hoàng hôn",
+        dusk: "Chạng vạng",
+        night: "Đêm",
+      },
+    },
     about: {
       heading: "Giới thiệu",
       leadBefore: "Mình thích ",
@@ -157,7 +180,6 @@ export const messages = {
       leadBefore: "Ưu tiên sự rõ ràng, từ ",
       leadHighlight: "cách nghĩ đến dòng code.",
       languagesHeading: "Ngoại ngữ",
-      processHeading: "Cách làm việc",
     },
     contact: {
       heading: "Liên hệ",
