@@ -99,6 +99,45 @@
   border-color: var(--accent);
 }
 
+/* Minh họa động cho phần Cách làm việc */
+.process-radar {
+  background: conic-gradient(
+    from 0deg,
+    color-mix(in srgb, var(--accent) 32%, transparent) 0deg,
+    transparent 65deg,
+    transparent 360deg
+  );
+  animation: spin-slow 6s linear infinite;
+}
+
+.process-node {
+  animation: node-pulse 4.2s ease-in-out infinite;
+}
+
+.process-caret {
+  animation: caret 0.9s steps(1) infinite;
+}
+
+.process-orbit {
+  animation: spin-slow 5.4s linear infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes node-pulse {
+  0%,
+  100% {
+    border-color: var(--line);
+  }
+  45% {
+    border-color: var(--accent);
+  }
+}
+
 /* Dự án chưa công bố */
 .sealed-lines {
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -199,6 +238,10 @@
     opacity: 1;
   }
 
+  .process-radar,
+  .process-node,
+  .process-caret,
+  .process-orbit,
   .project:hover .lock,
   .status-dot::after,
   .hero-letter,

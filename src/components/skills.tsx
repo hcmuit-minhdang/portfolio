@@ -1,8 +1,9 @@
 "use client";
 
 import { useLanguage } from "@/components/language-provider";
+import { ProcessShowcase } from "@/components/process-showcase";
 import { Reveal } from "@/components/reveal";
-import { languages, processSteps, skillGroups } from "@/lib/skills";
+import { languages, skillGroups } from "@/lib/skills";
 
 export function Skills() {
   const { locale, t } = useLanguage();
@@ -102,22 +103,7 @@ export function Skills() {
             {t.skills.processHeading}
           </h3>
 
-          <ol className="mt-6 grid gap-6 md:grid-cols-3">
-            {processSteps.map((step, index) => (
-              <li key={step.title.en}>
-                <Reveal delay={index * 0.1} className="grid h-full">
-                  <div className="card-lift flex h-full flex-col rounded-3xl border border-line bg-surface p-6 md:p-8">
-                    <h4 className="font-display text-2xl leading-snug font-bold">
-                      {step.title[locale]}
-                    </h4>
-                    <p className="mt-3 text-pretty text-ink-2">
-                      {step.description[locale]}
-                    </p>
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
+          <ProcessShowcase />
         </div>
       </div>
     </section>

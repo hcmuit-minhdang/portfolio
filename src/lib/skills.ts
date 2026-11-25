@@ -51,40 +51,63 @@ export const languages: SkillItem[] = [
   },
 ];
 
+export type ProcessStepId = "understand" | "structure" | "verify";
+
 export type ProcessStep = {
+  id: ProcessStepId;
+  tab: Localized;
   title: Localized;
   description: Localized;
+  tags: Localized<string[]>;
 };
 
 export const processSteps: ProcessStep[] = [
   {
+    id: "understand",
+    tab: { en: "Understand", vi: "Hiểu bài toán" },
     title: {
-      en: "Understand the problem first",
-      vi: "Hiểu kỹ bài toán trước",
+      en: "Understand the problem first.",
+      vi: "Hiểu kỹ bài toán trước.",
     },
     description: {
-      en: "Break the problem down and clarify inputs and outputs before writing code.",
-      vi: "Tách nhỏ vấn đề và chốt rõ đầu vào, đầu ra trước khi bắt tay vào làm.",
+      en: "Break the problem down and clarify inputs, constraints, and expected outputs before writing the first line of code.",
+      vi: "Tách nhỏ vấn đề và chốt rõ đầu vào, ràng buộc cùng đầu ra mong muốn trước khi bắt tay vào viết code.",
+    },
+    tags: {
+      en: ["Problem scope", "Inputs & outputs", "Edge cases"],
+      vi: ["Phạm vi bài toán", "Đầu vào & đầu ra", "Trường hợp biên"],
     },
   },
   {
+    id: "structure",
+    tab: { en: "Structure", vi: "Cấu trúc" },
     title: {
-      en: "Keep the structure clean",
-      vi: "Giữ cấu trúc gọn gàng",
+      en: "Keep the structure clean.",
+      vi: "Giữ cấu trúc gọn gàng.",
     },
     description: {
-      en: "Prefer simple, readable, and maintainable solutions over unnecessary complexity.",
-      vi: "Chọn giải pháp đơn giản, dễ đọc và dễ sửa thay vì phức tạp hóa.",
+      en: "Prefer clear modules and simple, readable logic so every piece is easy to reason about and maintain.",
+      vi: "Chọn giải pháp đơn giản, chia nhỏ rõ ràng để từng phần đều dễ đọc, dễ hiểu và dễ sửa về sau.",
+    },
+    tags: {
+      en: ["Clean modules", "Readable logic", "Maintainable"],
+      vi: ["Chia lớp rõ ràng", "Logic dễ đọc", "Dễ bảo trì"],
     },
   },
   {
+    id: "verify",
+    tab: { en: "Verify", vi: "Kiểm thử" },
     title: {
-      en: "Verify in practice",
-      vi: "Kiểm tra trên thực tế",
+      en: "Build. Test. Refine.",
+      vi: "Xây. Kiểm thử. Mở rộng.",
     },
     description: {
-      en: "Build working pieces incrementally, test them thoroughly, then expand.",
-      vi: "Xây từng phần chạy được, tự kiểm thử kỹ rồi mới mở rộng tiếp.",
+      en: "Ship working pieces incrementally, verify them against real cases, and refine based on actual results.",
+      vi: "Xây từng phần chạy được, tự kiểm thử kỹ trên tình huống thực tế rồi mới tinh chỉnh và mở rộng tiếp.",
+    },
+    tags: {
+      en: ["Working build", "Real-world test", "Iterate"],
+      vi: ["Chạy thực tế", "Tự kiểm thử", "Cải tiến dần"],
     },
   },
 ];
