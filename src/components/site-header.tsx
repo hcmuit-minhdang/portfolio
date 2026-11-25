@@ -54,9 +54,22 @@ export function SiteHeader() {
             href="/"
             onClick={() => setOpen(false)}
             aria-label={t.homeAria(site.name)}
-            className="mr-auto rounded-xl"
+            className="mr-auto flex items-center gap-3 rounded-xl"
           >
             <Logo />
+            <span className="flex flex-col justify-center">
+              <span className="font-display text-lg leading-none font-bold tracking-wide text-ink">
+                dangminh
+              </span>
+              <span className="mt-1.5 hidden items-center gap-2 text-[11px] leading-none font-medium tracking-wider text-ink-2 uppercase sm:flex">
+                <span
+                  aria-hidden="true"
+                  className="status-dot shrink-0 scale-75"
+                  data-status="done"
+                />
+                <span>{t.headerStatus}</span>
+              </span>
+            </span>
           </Link>
 
           <nav aria-label={t.navAria} className="hidden md:block">

@@ -7,8 +7,9 @@ export const site = {
   github: "https://github.com/hcmuit-minhdang",
   linkedin: "https://www.linkedin.com/in/thanh-minh-dang-le-295a1a450/",
   facebook: "https://www.facebook.com/minhdanguit",
-  // Chép ảnh vào public/ rồi điền đường dẫn, ví dụ "/photo.jpg".
-  photo: null as string | null,
+  // Ảnh thẻ cá nhân (About) và ảnh khung Hero.
+  photo: "/card-photo.jpg" as string | null,
+  heroPhoto: "/hero-photo.jpg" as string | null,
   nav: [
     { href: "/#gioi-thieu", key: "about" as const },
     { href: "/#du-an", key: "projects" as const },

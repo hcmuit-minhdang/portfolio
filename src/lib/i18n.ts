@@ -12,6 +12,7 @@ export const messages = {
     mobileNavAria: "Mobile navigation",
     openMenu: "Open menu",
     closeMenu: "Close menu",
+    headerStatus: "OPEN TO NEW OPPORTUNITIES",
     nav: {
       about: "About",
       projects: "Projects",
@@ -93,6 +94,7 @@ export const messages = {
     mobileNavAria: "Điều hướng trên điện thoại",
     openMenu: "Mở menu",
     closeMenu: "Đóng menu",
+    headerStatus: "SẴN SÀNG CHO CƠ HỘI MỚI",
     nav: {
       about: "Giới thiệu",
       projects: "Dự án",
