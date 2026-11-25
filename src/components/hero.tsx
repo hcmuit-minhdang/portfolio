@@ -62,15 +62,15 @@ export function Hero() {
           </Replay>
 
           <Replay className="grid gap-7">
-            <div className="grid max-w-xl gap-3">
+            <div className="grid max-w-2xl gap-3">
               <p
-                className="hero-rise text-xl font-medium md:text-2xl"
+                className="hero-rise text-xl font-medium text-balance md:text-2xl"
                 style={order(0)}
               >
                 {t.hero.lead}
               </p>
               <p
-                className="hero-rise text-lg text-pretty text-ink-2"
+                className="hero-rise text-lg text-balance text-ink-2"
                 style={order(1)}
               >
                 {t.hero.sub}

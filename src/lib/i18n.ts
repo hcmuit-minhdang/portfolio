@@ -34,20 +34,8 @@ export const messages = {
     opensInNewTab: " (opens in new tab)",
     hero: {
       lead: "Vietnam–Japan IT junior at the University of Information Technology (UIT).",
-      sub: "Interested in backend, data, and AI.",
+      sub: "Interested in Full-stack Web Development, data, and AI/\u00a0AI\u00a0Agentic.",
       viewProjects: "View projects",
-    },
-    sky: {
-      toggleHint: "Click to preview sky across the day (Vietnam time)",
-      preview: "Preview",
-      phases: {
-        dawn: "Dawn",
-        morning: "Morning",
-        midday: "Midday",
-        sunset: "Sunset",
-        dusk: "Dusk",
-        night: "Night",
-      },
     },
     about: {
       heading: "About",
@@ -57,7 +45,7 @@ export const messages = {
         " Turning everyday problems into simple products that solve them.",
       highlights: [
         { value: "Year 3", label: "Vietnam–Japan IT, UIT" },
-        { value: "3 tracks", label: "Backend, data, and AI" },
+        { value: "3 tracks", label: "Web/App, Data, and AI" },
         { value: "1 project", label: "Scientific research, in progress" },
       ],
     },
@@ -127,20 +115,8 @@ export const messages = {
     opensInNewTab: " (mở tab mới)",
     hero: {
       lead: "Sinh viên Công nghệ thông tin Việt – Nhật tại Trường Đại học Công nghệ Thông tin (UIT).",
-      sub: "Mình quan tâm đến backend, data và AI.",
+      sub: "Mình quan tâm đến Full-stack Web Developer, Data và AI/AI Agentic.",
       viewProjects: "Xem dự án",
-    },
-    sky: {
-      toggleHint: "Bấm để xem thử bầu trời các khung giờ trong ngày (giờ Việt Nam)",
-      preview: "Xem thử",
-      phases: {
-        dawn: "Bình minh",
-        morning: "Buổi sáng",
-        midday: "Buổi trưa",
-        sunset: "Hoàng hôn",
-        dusk: "Chạng vạng",
-        night: "Đêm",
-      },
     },
     about: {
       heading: "Giới thiệu",
@@ -150,7 +126,7 @@ export const messages = {
         " Biến những vấn đề trong cuộc sống thành những sản phẩm đơn giản giúp giải quyết nó.",
       highlights: [
         { value: "Năm 3", label: "Công nghệ thông tin Việt – Nhật, UIT" },
-        { value: "3 hướng", label: "Backend, data và AI" },
+        { value: "3 hướng", label: "Web/App, Data và AI" },
         { value: "1 dự án", label: "Nghiên cứu khoa học, đang phát triển" },
       ],
     },

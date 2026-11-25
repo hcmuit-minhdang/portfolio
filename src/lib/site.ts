@@ -2,7 +2,7 @@
 export const site = {
   name: "Đặng Lê Thanh Minh",
   description:
-    "Portfolio of Đặng Lê Thanh Minh, Vietnam–Japan IT student at UIT, interested in backend, data, and AI.",
+    "Portfolio of Đặng Lê Thanh Minh, Vietnam–Japan IT student at UIT, interested in Web/App, Data, and AI/AI Agentic.",
   email: "danglethanhminh.dtd@gmail.com",
   github: "https://github.com/hcmuit-minhdang",
   linkedin: "https://www.linkedin.com/in/thanh-minh-dang-le-295a1a450/",

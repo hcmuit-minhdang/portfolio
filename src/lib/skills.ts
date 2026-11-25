@@ -24,7 +24,7 @@ export const skillGroups: SkillGroup[] = [
       en: "Areas I spend most of my time learning and building in.",
       vi: "Các mảng mình dành nhiều thời gian học và làm thực tế.",
     },
-    items: [{ name: "Backend" }, { name: "Data" }, { name: "AI" }],
+    items: [{ name: "Web/App" }, { name: "Data" }, { name: "AI" }],
   },
   // Khi chốt danh sách công cụ cụ thể, bỏ comment và điền vào đây:
   // {
