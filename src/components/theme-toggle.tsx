@@ -46,7 +46,7 @@ export function ThemeToggle() {
     <div
       role="group"
       aria-label="Chế độ giao diện"
-      className="flex gap-0.5 rounded-full border border-line-strong bg-surface p-1"
+      className="flex gap-0.5 rounded-full border border-line bg-surface p-1"
     >
       {options.map(({ value, label, icon }) => (
         <button

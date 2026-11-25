@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
-/* Xanh biển dịu, điểm màu cát.
+/* Deep Purple × Lavender.
+   muted / highlight ở chế độ sáng chỉ đạt 3:1: dùng cho icon và chữ lớn.
+   accent là màu nền/trang trí, chữ trên nó dùng accent-ink.
    Mỗi màu khai báo một lần: light-dark(sáng, tối).
    Mặc định theo hệ thống; class .light / .dark trên <html> ép chế độ. */
 :root {
   color-scheme: light dark;
 
-  --bg: light-dark(#edf3f5, #14262f);
-  --surface: light-dark(#f9fcfd, #1b313c);
-  --surface-2: light-dark(#dde8ec, #243e4b);
-  --line: light-dark(rgb(24 50 63 / 0.13), rgb(220 235 241 / 0.12));
-  --line-strong: light-dark(rgb(24 50 63 / 0.28), rgb(220 235 241 / 0.26));
-  --ink: light-dark(#18323f, #e3edf1);
-  --ink-2: light-dark(#3d5764, #bccfd7);
-  --muted: light-dark(#546d79, #95adb8);
-  --accent: light-dark(#23698a, #86bfd8);
-  --accent-ink: light-dark(#ffffff, #10222b);
-  --sand: light-dark(#7a6234, #d8c49c);
+  --bg: light-dark(#f6f3fa, #1c1925);
+  --surface: light-dark(#ffffff, #282232);
+  --line: light-dark(#e8e1f0, #393044);
+  --ink: light-dark(#483a62, #f0ebfa);
+  --ink-2: light-dark(#483a62, #b8a7db);
+  --muted: light-dark(#8876a9, #b8a7db);
+  --highlight: light-dark(#8876a9, #a78bca);
+  --accent: #a78bca;
+  --accent-ink: #1c1925;
 }
 
 .light {
@@ -30,15 +30,13 @@
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
   --color-line: var(--line);
-  --color-line-strong: var(--line-strong);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-muted: var(--muted);
+  --color-highlight: var(--highlight);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
-  --color-sand: var(--sand);
 
   --font-sans: var(--font-be-vietnam), system-ui, sans-serif;
   --font-display: var(--font-phudu), var(--font-be-vietnam), sans-serif;
@@ -52,7 +50,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--highlight);
     outline-offset: 3px;
   }
 
