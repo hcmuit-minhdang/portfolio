@@ -1,5 +1,11 @@
 import { ProfileCard } from "@/components/profile-card";
 
+const highlights = [
+  { value: "Năm 3", label: "Công nghệ thông tin Việt – Nhật, UIT" },
+  { value: "3 hướng", label: "Backend, data và AI" },
+  { value: "1 dự án", label: "Nghiên cứu khoa học, đang phát triển" },
+];
+
 export function About() {
   return (
     <section
@@ -7,36 +13,34 @@ export function About() {
       aria-labelledby="gioi-thieu-tieu-de"
       className="border-t border-line"
     >
-      <div className="shell grid items-center gap-12 py-20 md:py-28 lg:grid-cols-[22rem_1fr] lg:gap-16 xl:grid-cols-[26rem_1fr] xl:gap-24">
-        <div className="lg:order-last">
+      <div className="shell grid gap-12 py-16 md:py-24 lg:grid-cols-[23rem_1fr] lg:gap-16 xl:gap-24">
+        <div className="flex flex-col lg:order-last">
           <h2
             id="gioi-thieu-tieu-de"
-            className="font-display text-5xl leading-[1.1] font-bold md:text-7xl"
+            className="font-display text-2xl leading-none font-bold text-highlight"
           >
             Giới thiệu
           </h2>
 
-          <p className="mt-8 text-2xl leading-snug font-medium text-pretty md:text-3xl xl:text-4xl xl:leading-snug">
+          <p className="mt-6 text-[clamp(1.75rem,3.1vw,3.5rem)] leading-[1.22] font-medium tracking-tight text-pretty">
             Mình thích{" "}
             <span className="text-highlight">
               những thứ liên quan đến logic.
             </span>{" "}
             Gặp một vấn đề rối, mình muốn tách nó thành từng phần nhỏ, hiểu từng
-            phần hoạt động ra sao rồi ghép lại cho chạy đúng.
+            phần rồi ghép lại cho chạy đúng.
           </p>
 
-          <div className="mt-8 grid max-w-[75ch] gap-5 text-lg text-pretty xl:text-xl">
-            <p>
-              Vì vậy mình hướng đến backend, data và AI. Đó là những phần người
-              dùng ít khi nhìn thấy, nhưng quyết định một sản phẩm có đáng tin
-              hay không.
-            </p>
-            <p>
-              Mình đang học năm 3 và thực hiện một dự án nghiên cứu khoa học.
-              Mình vẫn còn nhiều điều phải học, và trang này là nơi mình ghi lại
-              những gì mình làm được trên đường đi.
-            </p>
-          </div>
+          <ul className="mt-12 grid border-t border-line pt-6 max-sm:gap-5 sm:grid-cols-3 sm:divide-x sm:divide-line lg:mt-auto">
+            {highlights.map(({ value, label }) => (
+              <li key={value} className="sm:px-4 xl:px-6 sm:first:pl-0 sm:last:pr-0">
+                <p className="font-display text-3xl leading-tight font-bold whitespace-nowrap xl:text-5xl xl:leading-tight">
+                  {value}
+                </p>
+                <p className="mt-1 text-sm text-pretty text-ink-2">{label}</p>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <ProfileCard />

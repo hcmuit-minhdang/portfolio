@@ -26,7 +26,7 @@ export function Tilt({ children }: { children: ReactNode }) {
 
   return (
     <div
-      className="tilt w-full max-w-[26rem]"
+      className="tilt w-full max-w-[23rem]"
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
     >
