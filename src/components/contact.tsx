@@ -5,6 +5,8 @@ import { useLanguage } from "@/components/language-provider";
 import { Reveal } from "@/components/reveal";
 import { site } from "@/lib/site";
 
+const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}`;
+
 const socials = [
   {
     name: "GitHub",
@@ -81,19 +83,25 @@ export function Contact() {
             <div className="min-w-0">
               <p className="text-sm text-ink-2">{t.contact.emailLabel}</p>
               <a
-                href={`mailto:${site.email}`}
+                href={gmailComposeUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="mt-2 inline-block font-display text-2xl leading-tight font-bold break-all decoration-accent decoration-2 underline-offset-4 hover:underline sm:text-3xl md:text-4xl"
               >
                 {site.email}
+                <span className="sr-only">{t.opensInNewTab}</span>
               </a>
             </div>
 
             <div className="flex flex-wrap gap-3 md:shrink-0">
               <a
-                href={`mailto:${site.email}`}
+                href={gmailComposeUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="group btn bg-accent text-accent-ink"
               >
                 {t.contact.sendEmail}
+                <span className="sr-only">{t.opensInNewTab}</span>
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
