@@ -84,19 +84,6 @@ export function Hero() {
                 d="M12 5v14M6 13l6 6 6-6"
               />
             </a>
-            <a
-              href={site.github}
-              target="_blank"
-              rel="noreferrer"
-              className="group btn border border-highlight hover:bg-surface"
-            >
-              GitHub
-              <span className="sr-only">{t.opensInNewTab}</span>
-              <Arrow
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                d="M7 17L17 7M9 7h8v8"
-              />
-            </a>
           </div>
         </Replay>
       </div>
