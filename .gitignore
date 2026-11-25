@@ -1,0 +1,8 @@
+# Handoff chỉ dùng nội bộ, không đưa lên GitHub
+handoff/
+
+# Nhật kí dự án, chỉ dùng nội bộ
+journal/
+
+# Kế hoạch theo ngày, chỉ dùng nội bộ
+plan/
