@@ -1,6 +1,10 @@
-// Thông tin dùng chung. Tên là chữ tạm, thay ở bước nội dung thật.
+// Thông tin dùng chung cho toàn trang.
 export const site = {
-  name: "Minh",
+  name: "Đặng Lê Thanh Minh",
+  shortName: "Thanh Minh",
+  description:
+    "Portfolio của Đặng Lê Thanh Minh, sinh viên Công nghệ thông tin Việt – Nhật tại UIT, quan tâm backend, data và AI.",
+  github: "https://github.com/hcmuit-minhdang",
   nav: [
     { href: "/#gioi-thieu", label: "Giới thiệu" },
     { href: "/#du-an", label: "Dự án" },

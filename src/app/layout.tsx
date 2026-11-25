@@ -3,6 +3,7 @@ import { Be_Vietnam_Pro, Phudu } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const beVietnam = Be_Vietnam_Pro({
@@ -17,8 +18,8 @@ const phudu = Phudu({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio cá nhân, đang trong quá trình xây dựng.",
+  title: site.name,
+  description: site.description,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

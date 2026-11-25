@@ -39,9 +39,9 @@ export function SiteHeader() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="mr-auto font-display text-3xl leading-none font-bold"
+          className="mr-auto font-display text-2xl leading-none md:text-3xl font-bold"
         >
-          {site.name}
+          {site.shortName}
         </Link>
 
         <nav aria-label="Điều hướng chính" className="hidden md:block">
