@@ -87,6 +87,55 @@
   animation: drift 14s ease-in-out infinite alternate;
 }
 
+/* Dự án chưa công bố */
+.sealed-lines {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project:hover .sealed-lines {
+  transform: scale(1.06);
+}
+
+.project:hover .lock {
+  animation: locked 0.5s ease-in-out;
+}
+
+.status-dot {
+  position: relative;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--accent);
+  animation: ping 2s ease-out infinite;
+}
+
+@keyframes locked {
+  20%,
+  60% {
+    transform: translateX(-5px) rotate(-4deg);
+  }
+
+  40%,
+  80% {
+    transform: translateX(5px) rotate(4deg);
+  }
+}
+
+@keyframes ping {
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
 @keyframes letter-in {
   from {
     opacity: 0;
@@ -129,6 +178,8 @@
     opacity: 1;
   }
 
+  .project:hover .lock,
+  .status-dot::after,
   .hero-letter,
   .hero-rise,
   .hero-glow > div,
@@ -136,11 +187,16 @@
     animation: none;
   }
 
+  .sealed-lines,
   .hero-letter,
   .hero-glow,
   .nav-link,
   .btn {
     transition: none;
+  }
+
+  .project:hover .sealed-lines {
+    transform: none;
   }
 
   .hero-letter:hover,
