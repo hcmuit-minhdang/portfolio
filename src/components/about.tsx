@@ -1,14 +1,13 @@
+"use client";
+
+import { useLanguage } from "@/components/language-provider";
 import { Parallax } from "@/components/parallax";
 import { ProfileCard } from "@/components/profile-card";
 import { Reveal } from "@/components/reveal";
 
-const highlights = [
-  { value: "Năm 3", label: "Công nghệ thông tin Việt – Nhật, UIT" },
-  { value: "3 hướng", label: "Backend, data và AI" },
-  { value: "1 dự án", label: "Nghiên cứu khoa học, đang phát triển" },
-];
-
 export function About() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="gioi-thieu"
@@ -21,24 +20,21 @@ export function About() {
             id="gioi-thieu-tieu-de"
             className="font-display text-2xl leading-none font-bold text-highlight"
           >
-            Giới thiệu
+            {t.about.heading}
           </h2>
 
           <Reveal>
             <p className="mt-6 text-[clamp(1.75rem,3.1vw,3.5rem)] leading-[1.22] font-medium tracking-tight text-pretty">
-              Mình thích{" "}
-              <span className="text-highlight">
-                những thứ liên quan đến logic.
-              </span>{" "}
-              Biến những vấn đề trong cuộc sống thành những sản phẩm đơn giản
-              giúp giải quyết nó.
+              {t.about.leadBefore}
+              <span className="text-highlight">{t.about.leadHighlight}</span>
+              {t.about.leadAfter}
             </p>
           </Reveal>
 
           <ul className="mt-12 grid border-t border-line pt-6 max-sm:gap-5 sm:grid-cols-3 sm:divide-x sm:divide-line lg:mt-auto">
-            {highlights.map(({ value, label }, index) => (
+            {t.about.highlights.map(({ value, label }, index) => (
               <li
-                key={value}
+                key={index}
                 className="sm:px-4 xl:px-6 sm:first:pl-0 sm:last:pr-0"
               >
                 <Reveal delay={0.1 + index * 0.12}>

@@ -1,15 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import { Clock } from "@/components/clock";
+import { useLanguage } from "@/components/language-provider";
 import { Tilt } from "@/components/tilt";
 import { site } from "@/lib/site";
 
-const details = [
-  { term: "Nơi ở", detail: "TP HCM" },
-  { term: "Giờ", detail: <Clock /> },
-  { term: "Handle", detail: "@minhdanguit" },
-];
-
 export function ProfileCard() {
+  const { t } = useLanguage();
+
+  const details = [
+    { term: t.profileCard.locationTerm, detail: t.profileCard.locationValue },
+    { term: t.profileCard.timeTerm, detail: <Clock /> },
+    { term: t.profileCard.handleTerm, detail: "@minhdanguit" },
+  ];
+
   return (
     <Tilt>
       <div className="overflow-hidden rounded-3xl border border-line bg-surface">
@@ -17,7 +22,7 @@ export function ProfileCard() {
           <span>UIT 2026</span>
           {/* Lỗ xỏ dây đeo */}
           <span className="h-3 w-14 rounded-full bg-bg" />
-          <span className="justify-self-end">Năm 3</span>
+          <span className="justify-self-end">{t.profileCard.year}</span>
         </div>
 
         <div className="p-4">
@@ -25,7 +30,7 @@ export function ProfileCard() {
             {site.photo ? (
               <Image
                 src={site.photo}
-                alt={`Ảnh của ${site.name}`}
+                alt={t.profileCard.photoAlt(site.name)}
                 fill
                 sizes="(min-width: 23rem) 21rem, 90vw"
                 className="object-cover"

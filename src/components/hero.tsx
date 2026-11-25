@@ -1,5 +1,8 @@
+"use client";
+
 import type { CSSProperties } from "react";
 import { HeroGlow } from "@/components/hero-glow";
+import { useLanguage } from "@/components/language-provider";
 import { Parallax } from "@/components/parallax";
 import { Replay } from "@/components/replay";
 import { site } from "@/lib/site";
@@ -11,7 +14,7 @@ const order = (index: number) => ({ "--i": index }) as CSSProperties;
 function Letters({ text, start }: { text: string; start: number }) {
   return [...text].map((letter, index) => (
     <span key={index} className="hero-letter" style={order(start + index)}>
-      {letter === " " ? " " : letter}
+      {letter === " " ? "\u00a0" : letter}
     </span>
   ));
 }
@@ -31,6 +34,8 @@ function Arrow({ className, d }: { className: string; d: string }) {
 }
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative grid min-h-[calc(100svh-4.5rem)] overflow-hidden">
       <HeroGlow />
@@ -61,20 +66,19 @@ export function Hero() {
               className="hero-rise text-xl font-medium md:text-2xl"
               style={order(0)}
             >
-              Sinh viên Công nghệ thông tin Việt – Nhật tại Trường Đại học Công
-              nghệ Thông tin (UIT).
+              {t.hero.lead}
             </p>
             <p
               className="hero-rise text-lg text-pretty text-ink-2"
               style={order(1)}
             >
-              Mình quan tâm đến backend, data và AI.
+              {t.hero.sub}
             </p>
           </div>
 
           <div className="hero-rise flex flex-wrap gap-3" style={order(2)}>
             <a href="#du-an" className="group btn bg-accent text-accent-ink">
-              Xem dự án
+              {t.hero.viewProjects}
               <Arrow
                 className="group-hover:translate-y-1"
                 d="M12 5v14M6 13l6 6 6-6"
@@ -87,7 +91,7 @@ export function Hero() {
               className="group btn border border-highlight hover:bg-surface"
             >
               GitHub
-              <span className="sr-only"> (mở tab mới)</span>
+              <span className="sr-only">{t.opensInNewTab}</span>
               <Arrow
                 className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 d="M7 17L17 7M9 7h8v8"

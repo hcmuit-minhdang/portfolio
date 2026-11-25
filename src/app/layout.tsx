@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro, Phudu } from "next/font/google";
+import { LanguageProvider } from "@/components/language-provider";
 import { MotionProvider } from "@/components/motion-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="vi"
+      lang="en"
       suppressHydrationWarning
       data-scroll-behavior="smooth"
       className={`${beVietnam.variable} ${phudu.variable} h-full antialiased`}
@@ -37,17 +38,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <style>{`[data-reveal] { opacity: 1 !important; transform: none !important; }`}</style>
         </noscript>
         <ThemeProvider>
-          <MotionProvider>
-            <a
-              href="#noi-dung"
-              className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-30 focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:text-accent-ink"
-            >
-              Bỏ qua điều hướng
-            </a>
-            <SiteHeader />
-            {children}
-            <SiteFooter />
-          </MotionProvider>
+          <LanguageProvider>
+            <MotionProvider>
+              <SiteHeader />
+              {children}
+              <SiteFooter />
+            </MotionProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,7 +1,12 @@
+"use client";
+
+import { useLanguage } from "@/components/language-provider";
 import { Reveal } from "@/components/reveal";
-import { projects, statusLabels, type Project } from "@/lib/projects";
+import { projects, type Project } from "@/lib/projects";
 
 export function Projects() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="du-an"
@@ -13,13 +18,13 @@ export function Projects() {
           id="du-an-tieu-de"
           className="font-display text-2xl leading-none font-bold text-highlight"
         >
-          Dự án
+          {t.projects.heading}
         </h2>
 
         <Reveal>
           <p className="mt-6 text-[clamp(1.75rem,3.1vw,3.5rem)] leading-[1.22] font-medium tracking-tight text-balance">
-            Hiện mình đang tập trung vào{" "}
-            <span className="text-highlight">một dự án nghiên cứu.</span>
+            {t.projects.leadBefore}
+            <span className="text-highlight">{t.projects.leadHighlight}</span>
           </p>
         </Reveal>
 
@@ -38,6 +43,7 @@ export function Projects() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
+  const { locale, t } = useLanguage();
   const isPrivate = project.visibility === "private";
 
   return (
@@ -49,22 +55,19 @@ function ProjectCard({ project }: { project: Project }) {
       {isPrivate && <SealedVisual />}
 
       <div className="flex flex-col p-6 md:p-10">
-        <p className="text-ink-2">{project.kind}</p>
+        <p className="text-ink-2">{project.kind[locale]}</p>
         <h3 className="mt-2 font-display text-6xl leading-none font-bold xl:text-8xl">
           {project.name}
         </h3>
 
         {project.visibility === "private" ? (
-          <>
-            <p className="mt-6 max-w-[40ch] text-lg text-pretty">
-              Nội dung chưa được công bố. Mình sẽ chia sẻ khi nghiên cứu hoàn
-              thành.
-            </p>
-          </>
+          <p className="mt-6 max-w-[40ch] text-lg text-pretty">
+            {t.projects.privateNote}
+          </p>
         ) : (
           <>
             <p className="mt-6 max-w-[60ch] text-lg text-pretty">
-              {project.summary}
+              {project.summary[locale]}
             </p>
             <p className="mt-4 text-ink-2">{project.tech.join(", ")}</p>
             <a
@@ -73,8 +76,9 @@ function ProjectCard({ project }: { project: Project }) {
               rel="noreferrer"
               className="mt-8 btn self-start bg-accent text-accent-ink"
             >
-              Xem {project.name}
-              <span className="sr-only"> (mở tab mới)</span>
+              {t.projects.viewPrefix}
+              {project.name}
+              <span className="sr-only">{t.opensInNewTab}</span>
             </a>
           </>
         )}
@@ -85,7 +89,7 @@ function ProjectCard({ project }: { project: Project }) {
             className="status-dot"
             data-status={project.status}
           />
-          {statusLabels[project.status]}
+          {t.projects.status[project.status]}
         </p>
       </div>
     </article>

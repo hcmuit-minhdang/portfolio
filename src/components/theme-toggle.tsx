@@ -2,11 +2,11 @@
 
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
+import { useLanguage } from "@/components/language-provider";
 
 const options = [
   {
-    value: "light",
-    label: "Sáng",
+    value: "light" as const,
     icon: (
       <>
         <circle cx="12" cy="12" r="4" />
@@ -15,8 +15,7 @@ const options = [
     ),
   },
   {
-    value: "system",
-    label: "Theo hệ thống",
+    value: "system" as const,
     icon: (
       <>
         <rect x="3" y="4" width="18" height="12" rx="2" />
@@ -25,8 +24,7 @@ const options = [
     ),
   },
   {
-    value: "dark",
-    label: "Tối",
+    value: "dark" as const,
     icon: <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />,
   },
 ];
@@ -34,6 +32,7 @@ const options = [
 const noopSubscribe = () => () => {};
 
 export function ThemeToggle() {
+  const { t } = useLanguage();
   const { theme, setTheme } = useTheme();
   // Server không biết lựa chọn đã lưu, nên chỉ đánh dấu nút sau khi hydrate.
   const hydrated = useSyncExternalStore(
@@ -45,7 +44,7 @@ export function ThemeToggle() {
   return (
     <div
       role="group"
-      aria-label="Chế độ giao diện"
+      aria-label={t.theme.groupAria}
       className="relative flex gap-0.5 rounded-full border border-line bg-surface p-1"
     >
       {hydrated && (
@@ -57,27 +56,30 @@ export function ThemeToggle() {
           }}
         />
       )}
-      {options.map(({ value, label, icon }) => (
-        <button
-          key={value}
-          type="button"
-          aria-label={label}
-          aria-pressed={hydrated && theme === value}
-          title={label}
-          onClick={() => setTheme(value)}
-          className="relative grid size-9 cursor-pointer place-items-center rounded-full text-muted hover:text-ink transition-colors aria-pressed:text-accent-ink"
-        >
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            className="size-4 fill-none stroke-current stroke-2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+      {options.map(({ value, icon }) => {
+        const label = t.theme[value];
+        return (
+          <button
+            key={value}
+            type="button"
+            aria-label={label}
+            aria-pressed={hydrated && theme === value}
+            title={label}
+            onClick={() => setTheme(value)}
+            className="relative grid size-9 cursor-pointer place-items-center rounded-full text-muted transition-colors hover:text-ink aria-pressed:text-accent-ink"
           >
-            {icon}
-          </svg>
-        </button>
-      ))}
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="size-4 fill-none stroke-current stroke-2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {icon}
+            </svg>
+          </button>
+        );
+      })}
     </div>
   );
 }

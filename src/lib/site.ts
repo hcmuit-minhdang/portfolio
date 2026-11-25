@@ -2,14 +2,14 @@
 export const site = {
   name: "Đặng Lê Thanh Minh",
   description:
-    "Portfolio của Đặng Lê Thanh Minh, sinh viên Công nghệ thông tin Việt – Nhật tại UIT, quan tâm backend, data và AI.",
+    "Portfolio of Đặng Lê Thanh Minh, Vietnam–Japan IT student at UIT, interested in backend, data, and AI.",
   github: "https://github.com/hcmuit-minhdang",
   // Chép ảnh vào public/ rồi điền đường dẫn, ví dụ "/photo.jpg".
   photo: null as string | null,
   nav: [
-    { href: "/#gioi-thieu", label: "Giới thiệu" },
-    { href: "/#du-an", label: "Dự án" },
-    { href: "/#ky-nang", label: "Kỹ năng" },
-    { href: "/#lien-he", label: "Liên hệ" },
+    { href: "/#gioi-thieu", key: "about" as const },
+    { href: "/#du-an", key: "projects" as const },
+    { href: "/#ky-nang", key: "skills" as const },
+    { href: "/#lien-he", key: "contact" as const },
   ],
 };
