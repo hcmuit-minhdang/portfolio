@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { site } from "@/lib/site";
 
@@ -39,9 +40,10 @@ export function SiteHeader() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="mr-auto font-display text-2xl leading-none md:text-3xl font-bold"
+          aria-label={`${site.name}, về trang chủ`}
+          className="mr-auto rounded-xl"
         >
-          {site.shortName}
+          <Logo />
         </Link>
 
         <nav aria-label="Điều hướng chính" className="hidden md:block">

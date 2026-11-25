@@ -1,7 +1,6 @@
 // Thông tin dùng chung cho toàn trang.
 export const site = {
   name: "Đặng Lê Thanh Minh",
-  shortName: "Thanh Minh",
   description:
     "Portfolio của Đặng Lê Thanh Minh, sinh viên Công nghệ thông tin Việt – Nhật tại UIT, quan tâm backend, data và AI.",
   github: "https://github.com/hcmuit-minhdang",

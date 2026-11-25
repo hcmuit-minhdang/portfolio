@@ -45,7 +45,7 @@
 /* Khung nội dung canh giữa, dùng chung cho mọi phần của trang */
 @utility shell {
   width: 100%;
-  max-width: 88rem;
+  max-width: 105.5rem;
   margin-inline: auto;
   padding-inline: 1.5rem;
 
@@ -76,6 +76,64 @@
   }
 }
 
+/* Logo terminal: con trỏ nhấp nháy; rê chuột thì ô sáng lên,
+   dấu nhắc nhích tới và con trỏ chạy như đang gõ */
+.logo {
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-prompt {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo-caret {
+  stroke: var(--highlight);
+  animation: caret 1.1s steps(1) infinite;
+}
+
+a:is(:hover, :focus-visible) > .logo {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  transform: translateY(-2px) rotate(-5deg);
+
+  .logo-prompt {
+    transform: translateX(2px);
+  }
+
+  .logo-caret {
+    stroke: currentColor;
+    stroke-dasharray: 6;
+    animation: typing 0.9s ease-out infinite;
+  }
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    stroke-dashoffset: 6;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  60%,
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Thẻ nghiêng theo con trỏ (components/tilt.tsx) */
 .tilt {
   perspective: 1100px;
@@ -103,6 +161,20 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .logo,
+  .logo-prompt {
+    transition: none;
+  }
+
+  a:is(:hover, :focus-visible) > .logo {
+    transform: none;
+  }
+
+  .logo-caret,
+  a:is(:hover, :focus-visible) > .logo .logo-caret {
+    animation: none;
+  }
+
   .tilt-body {
     transform: none;
     transition: none;
