@@ -76,6 +76,15 @@ export const messages = {
       languagesHeading: "Languages",
       processHeading: "How I work",
     },
+    contact: {
+      heading: "Contact",
+      leadBefore: "Open to new ideas, ",
+      leadHighlight: "let's get in touch.",
+      emailLabel: "Email",
+      sendEmail: "Send email",
+      copyEmail: "Copy email",
+      copied: "Copied",
+    },
   },
   vi: {
     skipToContent: "Bỏ qua điều hướng",
@@ -147,6 +156,15 @@ export const messages = {
       leadHighlight: "cách nghĩ đến dòng code.",
       languagesHeading: "Ngoại ngữ",
       processHeading: "Cách làm việc",
+    },
+    contact: {
+      heading: "Liên hệ",
+      leadBefore: "Sẵn sàng trao đổi, ",
+      leadHighlight: "kết nối với mình nhé.",
+      emailLabel: "Email",
+      sendEmail: "Gửi email",
+      copyEmail: "Sao chép email",
+      copied: "Đã sao chép",
     },
   },
 } as const;
