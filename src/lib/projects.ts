@@ -1,4 +1,12 @@
+// Màu đèn: done xanh, active vàng, paused đỏ (xem .status-dot trong motion.css).
+export const statusLabels = {
+  done: "Hoàn thành",
+  active: "Đang phát triển",
+  paused: "Tạm dừng",
+};
+
 type Base = {
+  status: keyof typeof statusLabels;
   name: string;
   kind: string;
 };
@@ -16,5 +24,10 @@ type PublicProject = Base & {
 export type Project = PrivateProject | PublicProject;
 
 export const projects: Project[] = [
-  { name: "OFMIS", kind: "Nghiên cứu khoa học", visibility: "private" },
+  {
+    name: "OFMIS",
+    kind: "Nghiên cứu khoa học",
+    status: "active",
+    visibility: "private",
+  },
 ];

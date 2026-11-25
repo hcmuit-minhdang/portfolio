@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/reveal";
-import { projects, type Project } from "@/lib/projects";
+import { projects, statusLabels, type Project } from "@/lib/projects";
 
 export function Projects() {
   return (
@@ -60,10 +60,6 @@ function ProjectCard({ project }: { project: Project }) {
               Nội dung chưa được công bố. Mình sẽ chia sẻ khi nghiên cứu hoàn
               thành.
             </p>
-            <p className="mt-8 flex items-center gap-3 font-medium lg:mt-auto lg:pt-8">
-              <span aria-hidden="true" className="status-dot" />
-              Đang phát triển
-            </p>
           </>
         ) : (
           <>
@@ -82,6 +78,15 @@ function ProjectCard({ project }: { project: Project }) {
             </a>
           </>
         )}
+
+        <p className="mt-8 flex items-center gap-3 font-medium lg:mt-auto lg:pt-8">
+          <span
+            aria-hidden="true"
+            className="status-dot"
+            data-status={project.status}
+          />
+          {statusLabels[project.status]}
+        </p>
       </div>
     </article>
   );
