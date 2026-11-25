@@ -1,30 +1,15 @@
 import type { Metadata } from "next";
-import {
-  Bricolage_Grotesque,
-  Inter,
-  JetBrains_Mono,
-  Newsreader,
-} from "next/font/google";
+import { Be_Vietnam_Pro, Phudu } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const beVietnam = Be_Vietnam_Pro({
+  variable: "--font-be-vietnam",
   subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "700"],
 });
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin", "vietnamese"],
-});
-
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin", "vietnamese"],
-  style: "italic",
-});
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
+const phudu = Phudu({
+  variable: "--font-phudu",
   subsets: ["latin", "vietnamese"],
 });
 
@@ -37,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="vi"
-      className={`${inter.variable} ${bricolage.variable} ${newsreader.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${beVietnam.variable} ${phudu.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
