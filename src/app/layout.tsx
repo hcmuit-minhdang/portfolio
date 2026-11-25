@@ -4,6 +4,7 @@ import { LanguageProvider } from "@/components/language-provider";
 import { MotionProvider } from "@/components/motion-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SkyBackground } from "@/components/sky-background";
 import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -40,9 +41,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ThemeProvider>
           <LanguageProvider>
             <MotionProvider>
+              <SkyBackground />
               <SiteHeader />
-              {children}
-              <SiteFooter />
+              <div className="relative z-10 flex flex-1 flex-col">
+                {children}
+                <SiteFooter />
+              </div>
             </MotionProvider>
           </LanguageProvider>
         </ThemeProvider>

@@ -29,10 +29,10 @@ const PHASE_ORDER: SkyPhase[] = [
   "night",
 ];
 
-// 90 ngôi sao phân bố đều tự nhiên (dùng công thức cố định, không dùng Math.random để tránh lệch hydration).
+// 90 ngôi sao phân bố đều tự nhiên toàn màn hình (công thức cố định, không dùng Math.random để tránh lệch hydration).
 const STARS = Array.from({ length: 90 }, (_, i) => {
   const x = ((i * 37.61 + 11.3) % 96) + 2;
-  const y = ((i * 23.47 + 7.1) % 74) + 3;
+  const y = ((i * 29.47 + 5.1) % 90) + 3;
   const tier = i % 9 === 0 ? "bright" : i % 3 === 0 ? "mid" : "dim";
   const size = tier === "bright" ? 3 : tier === "mid" ? 2 : 1.5;
   const delay = `${((i * 0.43) % 4.5).toFixed(2)}s`;
@@ -132,7 +132,7 @@ export function SkyBackground() {
       <div
         aria-hidden="true"
         data-sky={phase}
-        className="sky-backdrop pointer-events-none absolute inset-0 overflow-hidden"
+        className="sky-backdrop pointer-events-none fixed inset-0 z-0 overflow-hidden"
       >
         {/* Lớp bầu trời chuyển màu theo thời gian thực */}
         <div className="sky-gradient absolute inset-0" />
@@ -182,17 +182,14 @@ export function SkyBackground() {
             <div className="sky-cloud sky-cloud-3" />
           </div>
         )}
-
-        {/* Lớp hòa nền mượt xuống cuối Hero để không tạo ranh giới cứng */}
-        <div className="sky-fade absolute inset-x-0 bottom-0 h-32" />
       </div>
 
-      {/* Nhãn thời gian bầu trời (bấm để xem thử 6 khung giờ trong ngày) */}
+      {/* Nhãn thời gian bầu trời cố định góc phải dưới (bấm để xem thử 6 khung giờ) */}
       <button
         type="button"
         onClick={cyclePreview}
         title={t.sky.toggleHint}
-        className="absolute right-6 bottom-5 z-10 inline-flex cursor-pointer items-center gap-2 rounded-full border border-line bg-surface/80 px-3.5 py-1.5 text-xs font-medium text-ink-2 backdrop-blur-md transition-colors hover:border-accent hover:text-ink md:right-16"
+        className="fixed right-5 bottom-5 z-30 inline-flex cursor-pointer items-center gap-2 rounded-full border border-line bg-surface/80 px-3.5 py-1.5 text-xs font-medium text-ink-2 backdrop-blur-md transition-colors hover:border-accent hover:text-ink"
       >
         <span
           aria-hidden="true"

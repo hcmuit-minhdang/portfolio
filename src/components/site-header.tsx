@@ -46,7 +46,7 @@ export function SiteHeader() {
 
       <header
         ref={header}
-        className="sticky top-0 z-20 border-b border-line bg-bg"
+        className="sticky top-0 z-20 border-b border-line bg-bg/75 backdrop-blur-md"
       >
         <ScrollProgress />
         <div className="shell flex h-18 items-center gap-2 md:gap-6">

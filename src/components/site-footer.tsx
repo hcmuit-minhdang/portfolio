@@ -8,7 +8,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-line">
-      <div className="shell flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-8 text-sm text-ink-2">
+      <div className="shell flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-8 pb-20 text-sm text-ink-2 sm:pb-16">
         <p>© 2026 {site.name}</p>
         <a
           href="#top"
