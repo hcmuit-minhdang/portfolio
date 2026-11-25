@@ -87,6 +87,18 @@
   animation: drift 14s ease-in-out infinite alternate;
 }
 
+/* Thẻ nội dung nhấc nhẹ khi rê chuột */
+.card-lift {
+  transition:
+    translate 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s;
+}
+
+.card-lift:hover {
+  translate: 0 -4px;
+  border-color: var(--accent);
+}
+
 /* Dự án chưa công bố */
 .sealed-lines {
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -196,6 +208,7 @@
     animation: none;
   }
 
+  .card-lift,
   .sealed-lines,
   .hero-letter,
   .hero-glow,
@@ -208,6 +221,7 @@
     transform: none;
   }
 
+  .card-lift:hover,
   .hero-letter:hover,
   .btn:hover {
     translate: none;
