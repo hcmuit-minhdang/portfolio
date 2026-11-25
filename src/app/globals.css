@@ -43,6 +43,10 @@
 }
 
 @layer base {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+
   body {
     background: var(--bg);
     color: var(--ink);
