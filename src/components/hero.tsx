@@ -2,7 +2,7 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="grid flex-1 content-end gap-10 px-6 pt-20 pb-16 md:px-16">
+    <section className="grid min-h-[calc(100svh-4.5rem)] content-end gap-10 px-6 pt-20 pb-16 md:px-16">
       <h1 className="font-display text-[clamp(4rem,14vw,11rem)] leading-[1.05] font-bold">
         Đặng Lê
         <span className="block text-highlight">Thanh Minh</span>
