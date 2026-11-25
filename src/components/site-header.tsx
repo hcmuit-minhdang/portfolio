@@ -35,7 +35,7 @@ export function SiteHeader() {
       ref={header}
       className="sticky top-0 z-20 border-b border-line bg-bg"
     >
-      <div className="flex h-18 items-center gap-3 px-6 md:gap-8 md:px-16">
+      <div className="shell flex h-18 items-center gap-3 md:gap-8">
         <Link
           href="/"
           onClick={() => setOpen(false)}

@@ -42,9 +42,21 @@
   --font-display: var(--font-phudu), var(--font-be-vietnam), sans-serif;
 }
 
+/* Khung nội dung canh giữa, dùng chung cho mọi phần của trang */
+@utility shell {
+  width: 100%;
+  max-width: 88rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 4rem;
+  }
+}
+
 @layer base {
   html {
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 4.5rem;
   }
 
   body {

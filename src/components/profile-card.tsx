@@ -27,7 +27,7 @@ export function ProfileCard() {
                 src={site.photo}
                 alt={`Ảnh của ${site.name}`}
                 fill
-                sizes="(min-width: 24rem) 21rem, 90vw"
+                sizes="(min-width: 26rem) 24rem, 90vw"
                 className="object-cover"
               />
             ) : (
