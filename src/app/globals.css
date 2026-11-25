@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Mỗi màu khai báo một lần: light-dark(sáng, tối).
+   Mặc định theo hệ thống; class .light / .dark trên <html> ép chế độ. */
+:root {
+  color-scheme: light dark;
+
+  --bg: light-dark(#f5f7fa, #05080d);
+  --surface: light-dark(#ffffff, #0d141e);
+  --surface-2: light-dark(#e9eef3, #131c28);
+  --line: light-dark(rgb(11 18 32 / 0.1), rgb(208 228 255 / 0.1));
+  --line-strong: light-dark(rgb(11 18 32 / 0.22), rgb(208 228 255 / 0.2));
+  --ink: light-dark(#0b1220, #eef3f7);
+  --ink-2: light-dark(#334155, #c0cbd6);
+  --muted: light-dark(#586578, #8492a2);
+  --accent: light-dark(#0b7a64, #9ef5d9);
+  --accent-ink: light-dark(#ffffff, #03221a);
+}
+
+.light {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-inter), sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+}

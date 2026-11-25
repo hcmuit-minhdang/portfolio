@@ -11,6 +11,15 @@ Website portfolio cá nhân, đang trong quá trình xây dựng.
 - MDX cho nội dung dự án
 - Deploy trên Vercel
 
+## Chạy thử
+
+```bash
+npm install
+npm run dev
+```
+
+Mở http://localhost:3000.
+
 ## Trạng thái
 
-Mới khởi tạo repo. Các phần còn lại sẽ được thêm dần, mỗi bước một commit.
+Đã có khung Next.js, font và bảng màu sáng/tối. Các phần còn lại sẽ được thêm dần, mỗi bước một commit.
