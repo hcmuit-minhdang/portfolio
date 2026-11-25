@@ -63,3 +63,40 @@
     color: var(--accent-ink);
   }
 }
+
+/* Thẻ nghiêng theo con trỏ (components/tilt.tsx) */
+.tilt {
+  perspective: 1100px;
+}
+
+.tilt-body {
+  position: relative;
+  border-radius: 1.5rem;
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: var(--glare, 0);
+  transition: opacity 0.4s;
+  background: radial-gradient(
+    22rem circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgb(255 255 255 / 0.2),
+    transparent 65%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-body {
+    transform: none;
+    transition: none;
+  }
+
+  .tilt-glare {
+    display: none;
+  }
+}
