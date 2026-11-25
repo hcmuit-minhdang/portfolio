@@ -87,121 +87,62 @@
   animation: drift 14s ease-in-out infinite alternate;
 }
 
-/* Bầu trời thay đổi theo thời gian thực (components/sky-background.tsx) */
+/* Bầu trời toàn trang (components/sky-background.tsx):
+   - Sáng (day): trời xanh, mây trắng, nắng vàng cùng cảnh cây cối hoa bướm.
+   - Tối (night): trời đêm tím sâu cùng trăng lưỡi liềm và 90 ngôi sao. */
 .sky-gradient {
-  transition: background 1.2s ease, opacity 1.2s ease;
+  transition: background 0.8s ease;
 }
 
-.sky-backdrop[data-sky="dawn"] .sky-gradient {
+.sky-backdrop[data-sky="day"] .sky-gradient {
   background:
     radial-gradient(
-      60rem 36rem at 25% 75%,
-      light-dark(rgb(248 180 150 / 0.45), rgb(245 158 124 / 0.28)),
-      transparent 70%
+      52rem 34rem at 44% 14%,
+      rgb(255 238 162 / 0.72),
+      transparent 64%
     ),
     linear-gradient(
       180deg,
-      light-dark(rgb(184 166 226 / 0.42), rgb(49 36 86 / 0.72)) 0%,
-      light-dark(rgb(233 190 218 / 0.45), rgb(118 68 118 / 0.5)) 55%,
-      light-dark(rgb(252 206 178 / 0.5), rgb(186 108 98 / 0.34)) 100%
-    );
-}
-
-.sky-backdrop[data-sky="morning"] .sky-gradient {
-  background:
-    radial-gradient(
-      54rem 34rem at 35% 32%,
-      light-dark(rgb(255 236 184 / 0.55), rgb(246 208 148 / 0.2)),
-      transparent 68%
-    ),
-    linear-gradient(
-      180deg,
-      light-dark(rgb(154 202 246 / 0.42), rgb(46 72 118 / 0.55)) 0%,
-      light-dark(rgb(206 218 248 / 0.36), rgb(64 62 114 / 0.42)) 58%,
-      transparent 100%
-    );
-}
-
-.sky-backdrop[data-sky="midday"] .sky-gradient {
-  background:
-    radial-gradient(
-      52rem 32rem at 52% 20%,
-      light-dark(rgb(255 244 204 / 0.55), rgb(232 222 255 / 0.18)),
-      transparent 65%
-    ),
-    linear-gradient(
-      180deg,
-      light-dark(rgb(130 192 248 / 0.45), rgb(48 84 136 / 0.55)) 0%,
-      light-dark(rgb(192 216 250 / 0.35), rgb(62 72 122 / 0.38)) 60%,
-      transparent 100%
-    );
-}
-
-.sky-backdrop[data-sky="sunset"] .sky-gradient {
-  background:
-    radial-gradient(
-      62rem 38rem at 76% 72%,
-      light-dark(rgb(248 156 116 / 0.48), rgb(242 132 98 / 0.34)),
-      transparent 68%
-    ),
-    linear-gradient(
-      180deg,
-      light-dark(rgb(168 148 214 / 0.42), rgb(46 32 82 / 0.78)) 0%,
-      light-dark(rgb(230 168 196 / 0.48), rgb(126 62 108 / 0.52)) 55%,
-      light-dark(rgb(250 188 146 / 0.52), rgb(196 102 84 / 0.36)) 100%
-    );
-}
-
-.sky-backdrop[data-sky="dusk"] .sky-gradient {
-  background:
-    radial-gradient(
-      56rem 34rem at 78% 82%,
-      light-dark(rgb(214 150 198 / 0.4), rgb(196 110 168 / 0.28)),
-      transparent 70%
-    ),
-    linear-gradient(
-      180deg,
-      light-dark(rgb(134 126 196 / 0.44), rgb(24 20 52 / 0.85)) 0%,
-      light-dark(rgb(176 148 208 / 0.38), rgb(64 42 96 / 0.62)) 60%,
-      transparent 100%
+      rgb(145 189 229 / 0.78) 0%,
+      rgb(206 226 247 / 0.58) 50%,
+      rgb(243 247 252 / 0.35) 100%
     );
 }
 
 .sky-backdrop[data-sky="night"] .sky-gradient {
   background:
     radial-gradient(
-      50rem 36rem at 74% 26%,
-      light-dark(rgb(154 140 212 / 0.34), rgb(148 128 214 / 0.24)),
-      transparent 70%
+      48rem 34rem at 34% 18%,
+      rgb(148 128 214 / 0.24),
+      transparent 68%
     ),
     linear-gradient(
       180deg,
-      light-dark(rgb(122 114 176 / 0.32), rgb(15 13 32 / 0.85)) 0%,
-      light-dark(rgb(164 150 206 / 0.24), rgb(34 26 60 / 0.55)) 62%,
+      rgb(15 13 32 / 0.88) 0%,
+      rgb(34 26 60 / 0.56) 60%,
       transparent 100%
     );
-}
-
-.sky-fade {
-  background: linear-gradient(180deg, transparent 0%, var(--bg) 100%);
 }
 
 .sky-sun {
   background: radial-gradient(
     circle,
-    rgb(255 245 214 / 0.95) 0%,
-    rgb(252 204 138 / 0.72) 45%,
-    transparent 72%
+    rgb(255 254 235 / 1) 0%,
+    rgb(255 224 118 / 0.96) 42%,
+    rgb(255 194 92 / 0.52) 72%,
+    transparent 86%
   );
-  box-shadow: 0 0 80px 28px rgb(252 198 132 / 0.35);
+  box-shadow:
+    0 0 60px 24px rgb(255 222 112 / 0.78),
+    0 0 130px 58px rgb(255 204 102 / 0.45);
 }
 
 .sky-moon {
   background: radial-gradient(
     circle at 32% 35%,
-    rgb(248 244 255 / 0.95) 0%,
-    rgb(210 196 244 / 0.85) 65%,
-    rgb(167 139 202 / 0.4) 100%
+    rgb(248 244 255 / 0.96) 0%,
+    rgb(210 196 244 / 0.86) 65%,
+    rgb(167 139 202 / 0.42) 100%
   );
   box-shadow: 0 0 64px 18px rgb(167 139 202 / 0.28);
 }
@@ -214,33 +155,29 @@
   width: 78%;
   height: 78%;
   border-radius: 50%;
-  background: light-dark(rgb(142 132 192 / 0.82), rgb(22 18 42 / 0.92));
+  background: rgb(22 18 42 / 0.94);
 }
 
 .sky-star {
-  background: light-dark(rgb(96 78 148 / 0.75), rgb(240 235 250 / 0.92));
+  background: rgb(240 235 250 / 0.92);
   animation: sky-twinkle 3.8s ease-in-out infinite;
 }
 
 .sky-star-bright {
-  box-shadow: 0 0 8px 1.5px
-    light-dark(rgb(136 118 169 / 0.55), rgb(224 210 255 / 0.75));
+  box-shadow: 0 0 8px 1.5px rgb(224 210 255 / 0.78);
 }
 
 .sky-cloud {
   position: absolute;
   border-radius: 999px;
-  background: light-dark(rgb(255 255 255 / 0.55), rgb(230 220 250 / 0.08));
-  filter: blur(22px);
-}
-
-.sky-backdrop[data-sky="sunset"] .sky-cloud,
-.sky-backdrop[data-sky="dawn"] .sky-cloud {
-  background: light-dark(rgb(255 224 206 / 0.52), rgb(242 170 156 / 0.12));
+  background: light-dark(rgb(255 255 255 / 0.9), rgb(184 167 219 / 0.1));
+  box-shadow: 0 8px 30px
+    light-dark(rgb(255 255 255 / 0.45), rgb(167 139 202 / 0.06));
+  filter: blur(18px);
 }
 
 .sky-cloud-1 {
-  top: 16%;
+  top: 15%;
   left: 8%;
   width: 24rem;
   height: 5.5rem;
@@ -248,43 +185,19 @@
 }
 
 .sky-cloud-2 {
-  top: 34%;
+  top: 30%;
   right: 12%;
-  width: 20rem;
-  height: 4.5rem;
+  width: 22rem;
+  height: 5rem;
   animation: sky-cloud-drift 44s ease-in-out infinite alternate-reverse;
 }
 
 .sky-cloud-3 {
-  top: 22%;
-  left: 44%;
-  width: 16rem;
-  height: 4rem;
+  top: 20%;
+  left: 52%;
+  width: 17rem;
+  height: 4.25rem;
   animation: sky-cloud-drift 52s ease-in-out infinite alternate;
-}
-
-.sky-badge-dot[data-sky="dawn"] {
-  background: #f0a488;
-}
-
-.sky-badge-dot[data-sky="morning"] {
-  background: #8cc2f5;
-}
-
-.sky-badge-dot[data-sky="midday"] {
-  background: #f5c85c;
-}
-
-.sky-badge-dot[data-sky="sunset"] {
-  background: #eb8c6d;
-}
-
-.sky-badge-dot[data-sky="dusk"] {
-  background: #c586c9;
-}
-
-.sky-badge-dot[data-sky="night"] {
-  background: #a78bca;
 }
 
 @keyframes sky-twinkle {
@@ -305,6 +218,176 @@
   }
   to {
     transform: translateX(3.5rem);
+  }
+}
+
+/* Cảnh cây cối, hoa và bướm dùng chung cho cả Sáng (ban ngày) và Tối (dưới ánh trăng) */
+.meadow-scene {
+  --meadow-hill-far: light-dark(#b8d5be, #2a243d);
+  --meadow-hill-mid: light-dark(#92be9c, #242138);
+  --meadow-hill-near: light-dark(#77a882, #1e1c30);
+  --meadow-hill-tree: light-dark(#89b593, #332c4a);
+  --meadow-trunk: light-dark(#6b5647, #322842);
+  --meadow-trunk-back: light-dark(#756151, #3a304d);
+  --meadow-leaf-1: light-dark(#598c65, #293842);
+  --meadow-leaf-2: light-dark(#689c74, #334552);
+  --meadow-leaf-3: light-dark(#79ae84, #3f5266);
+  --meadow-leaf-4: light-dark(#8ec298, #545d7d);
+  --meadow-leaf-back: light-dark(#84b58f, #31364f);
+  --meadow-stem: light-dark(#5c8a67, #48586e);
+  --meadow-flower-a: light-dark(#789bc4, #a78bca);
+  --meadow-flower-b: light-dark(#91bde5, #c8a8eb);
+  --meadow-flower-c: light-dark(#f0bfd2, #e0a6cc);
+  --meadow-flower-center: light-dark(#fff4d6, #f5e6ff);
+  --meadow-butterfly-1: light-dark(#789bc4, #a78bca);
+  --meadow-butterfly-2: light-dark(#91bde5, #d5bcf5);
+  --meadow-butterfly-body: light-dark(#253b59, #f0ebfa);
+}
+
+.meadow-sway {
+  transform-origin: bottom center;
+  animation: meadow-sway 7s ease-in-out infinite alternate;
+}
+
+.meadow-sway-slow {
+  transform-origin: bottom center;
+  animation: meadow-sway 9.5s ease-in-out infinite alternate-reverse;
+}
+
+.meadow-petal {
+  border-radius: 65% 35% 60% 40% / 55% 45% 55% 45%;
+  opacity: 0.65;
+  animation: petal-fall linear infinite;
+}
+
+.meadow-petal-primary {
+  background: var(--meadow-flower-b);
+}
+
+.meadow-petal-blush {
+  background: var(--meadow-flower-c);
+}
+
+.meadow-petal-cream {
+  background: var(--meadow-flower-center);
+}
+
+.meadow-butterfly {
+  position: absolute;
+  opacity: 0.82;
+}
+
+.meadow-butterfly-1 {
+  top: 28%;
+  left: 20%;
+  animation: butterfly-glide-1 26s ease-in-out infinite;
+}
+
+.meadow-butterfly-2 {
+  top: 56%;
+  left: 52%;
+  animation: butterfly-glide-2 32s ease-in-out infinite;
+}
+
+.meadow-butterfly-3 {
+  top: 38%;
+  left: 72%;
+  animation: butterfly-glide-3 29s ease-in-out infinite;
+}
+
+.butterfly-wing-left {
+  transform-origin: 16px 16px;
+  animation: wing-flap-left 0.55s ease-in-out infinite alternate;
+}
+
+.butterfly-wing-right {
+  transform-origin: 16px 16px;
+  animation: wing-flap-right 0.55s ease-in-out infinite alternate;
+}
+
+@keyframes meadow-sway {
+  from {
+    transform: rotate(-1.6deg);
+  }
+  to {
+    transform: rotate(1.6deg);
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.65;
+  }
+  85% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(6rem, 105vh, 0) rotate(260deg);
+    opacity: 0;
+  }
+}
+
+@keyframes butterfly-glide-1 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(8deg);
+  }
+  25% {
+    transform: translate3d(14vw, -6vh, 0) rotate(14deg);
+  }
+  50% {
+    transform: translate3d(26vw, 4vh, 0) rotate(-6deg);
+  }
+  75% {
+    transform: translate3d(12vw, 10vh, 0) rotate(-12deg);
+  }
+}
+
+@keyframes butterfly-glide-2 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+  30% {
+    transform: translate3d(-12vw, -10vh, 0) rotate(-14deg);
+  }
+  65% {
+    transform: translate3d(8vw, -16vh, 0) rotate(10deg);
+  }
+}
+
+@keyframes butterfly-glide-3 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-6deg);
+  }
+  35% {
+    transform: translate3d(-16vw, 8vh, 0) rotate(12deg);
+  }
+  70% {
+    transform: translate3d(-6vw, -8vh, 0) rotate(-10deg);
+  }
+}
+
+@keyframes wing-flap-left {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0.35);
+  }
+}
+
+@keyframes wing-flap-right {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0.35);
   }
 }
 
@@ -420,6 +503,12 @@
     opacity: 1;
   }
 
+  .meadow-sway,
+  .meadow-sway-slow,
+  .meadow-petal,
+  .meadow-butterfly,
+  .butterfly-wing-left,
+  .butterfly-wing-right,
   .sky-star,
   .sky-cloud,
   .project:hover .lock,

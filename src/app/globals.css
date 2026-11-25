@@ -1,22 +1,20 @@
 @import "tailwindcss";
 
-/* Deep Purple × Lavender.
-   muted / highlight ở chế độ sáng chỉ đạt 3:1: dùng cho icon và chữ lớn.
-   accent là màu nền/trang trí, chữ trên nó dùng accent-ink.
+/* Sáng: Midnight Blue × Soft Blue. Tối: Deep Purple × Lavender.
    Mỗi màu khai báo một lần: light-dark(sáng, tối).
    Mặc định theo hệ thống; class .light / .dark trên <html> ép chế độ. */
 :root {
   color-scheme: light dark;
 
-  --bg: light-dark(#f6f3fa, #1c1925);
+  --bg: light-dark(#f3f7fc, #1c1925);
   --surface: light-dark(#ffffff, #282232);
-  --line: light-dark(#e8e1f0, #393044);
-  --ink: light-dark(#483a62, #f0ebfa);
-  --ink-2: light-dark(#483a62, #b8a7db);
-  --muted: light-dark(#8876a9, #b8a7db);
-  --highlight: light-dark(#8876a9, #a78bca);
-  --accent: #a78bca;
-  --accent-ink: #1c1925;
+  --line: light-dark(#dfe8f2, #393044);
+  --ink: light-dark(#253b59, #f0ebfa);
+  --ink-2: light-dark(#718096, #b8a7db);
+  --muted: light-dark(#718096, #b8a7db);
+  --highlight: light-dark(#789bc4, #a78bca);
+  --accent: light-dark(#91bde5, #a78bca);
+  --accent-ink: light-dark(#152235, #1c1925);
 }
 
 .light {
@@ -74,6 +72,13 @@
     background: var(--accent);
     color: var(--accent-ink);
   }
+}
+
+/* Viền mảnh ngoài chữ giúp chữ nổi rõ trên nền cây/đồi cỏ */
+.text-outline {
+  paint-order: stroke fill;
+  -webkit-text-stroke: 2px
+    light-dark(rgb(255 255 255 / 0.9), rgb(28 25 37 / 0.85));
 }
 
 /* Logo terminal: con trỏ nhấp nháy; rê chuột thì ô sáng lên,
