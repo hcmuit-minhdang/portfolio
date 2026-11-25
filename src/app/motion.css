@@ -218,8 +218,13 @@
 }
 
 .sky-star {
-  background: light-dark(rgb(96 78 148 / 0.75), rgb(240 235 250 / 0.9));
+  background: light-dark(rgb(96 78 148 / 0.75), rgb(240 235 250 / 0.92));
   animation: sky-twinkle 3.8s ease-in-out infinite;
+}
+
+.sky-star-bright {
+  box-shadow: 0 0 8px 1.5px
+    light-dark(rgb(136 118 169 / 0.55), rgb(224 210 255 / 0.75));
 }
 
 .sky-cloud {

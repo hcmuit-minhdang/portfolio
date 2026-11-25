@@ -29,33 +29,16 @@ const PHASE_ORDER: SkyPhase[] = [
   "night",
 ];
 
-// Vị trí sao cố định (không dùng Math.random để tránh lệch hydration).
-const STARS = [
-  { x: 6, y: 12, size: 2, delay: "0s" },
-  { x: 14, y: 24, size: 1.5, delay: "1.2s" },
-  { x: 21, y: 9, size: 2.5, delay: "0.5s" },
-  { x: 29, y: 18, size: 1.5, delay: "2.1s" },
-  { x: 36, y: 11, size: 2, delay: "0.8s" },
-  { x: 42, y: 26, size: 1.5, delay: "1.7s" },
-  { x: 48, y: 8, size: 2, delay: "2.6s" },
-  { x: 55, y: 20, size: 1.5, delay: "0.3s" },
-  { x: 61, y: 14, size: 2.5, delay: "1.9s" },
-  { x: 67, y: 7, size: 1.5, delay: "1.1s" },
-  { x: 74, y: 22, size: 2, delay: "2.4s" },
-  { x: 81, y: 11, size: 2.5, delay: "0.7s" },
-  { x: 88, y: 19, size: 1.5, delay: "1.5s" },
-  { x: 93, y: 9, size: 2, delay: "2.9s" },
-  { x: 11, y: 38, size: 1.5, delay: "2.2s" },
-  { x: 25, y: 34, size: 2, delay: "0.9s" },
-  { x: 39, y: 41, size: 1.5, delay: "1.8s" },
-  { x: 52, y: 35, size: 2, delay: "0.4s" },
-  { x: 66, y: 39, size: 1.5, delay: "2.5s" },
-  { x: 78, y: 33, size: 2, delay: "1.3s" },
-  { x: 91, y: 37, size: 1.5, delay: "0.6s" },
-  { x: 17, y: 48, size: 1.5, delay: "1.6s" },
-  { x: 45, y: 49, size: 1.5, delay: "2.8s" },
-  { x: 72, y: 46, size: 2, delay: "0.2s" },
-];
+// 90 ngôi sao phân bố đều tự nhiên (dùng công thức cố định, không dùng Math.random để tránh lệch hydration).
+const STARS = Array.from({ length: 90 }, (_, i) => {
+  const x = ((i * 37.61 + 11.3) % 96) + 2;
+  const y = ((i * 23.47 + 7.1) % 74) + 3;
+  const tier = i % 9 === 0 ? "bright" : i % 3 === 0 ? "mid" : "dim";
+  const size = tier === "bright" ? 3 : tier === "mid" ? 2 : 1.5;
+  const delay = `${((i * 0.43) % 4.5).toFixed(2)}s`;
+  const duration = `${(2.8 + ((i * 0.37) % 3.2)).toFixed(2)}s`;
+  return { x, y, size, tier, delay, duration };
+});
 
 const vnParts = new Intl.DateTimeFormat("en-GB", {
   timeZone: "Asia/Ho_Chi_Minh",
@@ -123,7 +106,7 @@ export function SkyBackground() {
 
   const showStars = phase === "night" || phase === "dusk" || phase === "dawn";
   const starOpacity =
-    phase === "night" ? 0.85 : phase === "dusk" ? 0.55 : 0.28;
+    phase === "night" ? 0.95 : phase === "dusk" ? 0.55 : 0.25;
   const showClouds =
     phase === "morning" ||
     phase === "midday" ||
@@ -163,13 +146,16 @@ export function SkyBackground() {
             {STARS.map((star, index) => (
               <span
                 key={index}
-                className="sky-star absolute rounded-full"
+                className={`sky-star absolute rounded-full ${
+                  star.tier === "bright" ? "sky-star-bright" : ""
+                }`}
                 style={{
                   left: `${star.x}%`,
                   top: `${star.y}%`,
                   width: `${star.size}px`,
                   height: `${star.size}px`,
                   animationDelay: star.delay,
+                  animationDuration: star.duration,
                 }}
               />
             ))}
