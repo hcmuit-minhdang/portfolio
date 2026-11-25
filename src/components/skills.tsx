@@ -1,7 +1,6 @@
 "use client";
 
 import { useLanguage } from "@/components/language-provider";
-import { ProcessShowcase } from "@/components/process-showcase";
 import { Reveal } from "@/components/reveal";
 import { languages, skillGroups } from "@/lib/skills";
 
@@ -96,14 +95,6 @@ export function Skills() {
               </ul>
             </div>
           </Reveal>
-        </div>
-
-        <div className="mt-12 md:mt-16">
-          <h3 className="font-display text-2xl leading-none font-bold text-highlight">
-            {t.skills.processHeading}
-          </h3>
-
-          <ProcessShowcase />
         </div>
       </div>
     </section>
