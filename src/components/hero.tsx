@@ -64,7 +64,7 @@ export function Hero() {
           <Replay className="grid gap-7">
             <div className="grid max-w-2xl gap-3">
               <p
-                className="hero-rise text-xl font-medium text-balance md:text-2xl"
+                className="hero-rise text-xl font-medium whitespace-pre-line text-balance md:text-2xl"
                 style={order(0)}
               >
                 {t.hero.lead}

@@ -12,6 +12,7 @@ export const site = {
   heroPhoto: "/hero-photo.jpg" as string | null,
   nav: [
     { href: "/#gioi-thieu", key: "about" as const },
+    { href: "/#hoc-tap", key: "education" as const },
     { href: "/#du-an", key: "projects" as const },
     { href: "/#ky-nang", key: "skills" as const },
     { href: "/#lien-he", key: "contact" as const },

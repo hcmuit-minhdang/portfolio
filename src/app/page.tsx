@@ -1,5 +1,6 @@
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
+import { Education } from "@/components/education";
 import { Hero } from "@/components/hero";
 import { Projects } from "@/components/projects";
 import { SectionHash } from "@/components/section-hash";
@@ -15,6 +16,7 @@ export default function Home() {
       <SectionHash />
       <Hero />
       <About />
+      <Education />
       <Projects />
       <Skills />
       <Contact />

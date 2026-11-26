@@ -15,6 +15,7 @@ export const messages = {
     headerStatus: "OPEN TO NEW OPPORTUNITIES",
     nav: {
       about: "About",
+      education: "Education",
       projects: "Projects",
       skills: "Skills",
       contact: "Contact",
@@ -33,8 +34,8 @@ export const messages = {
     backToTop: "Back to top",
     opensInNewTab: " (opens in new tab)",
     hero: {
-      lead: "Vietnam–Japan IT junior at the University of Information Technology (UIT).",
-      sub: "Interested in Full-stack Web Development, data, and AI/\u00a0AI\u00a0Agentic.",
+      lead: "Vietnam–Japan IT junior\nat the University of Information Technology (UIT).",
+      sub: "Interested in Backend Web Development, Data, and AI/\u00a0AI\u00a0Agentic.",
       viewProjects: "View projects",
     },
     about: {
@@ -42,7 +43,7 @@ export const messages = {
       leadBefore: "I enjoy ",
       leadHighlight: "everything driven by logic.",
       leadAfter:
-        " Turning everyday problems into simple products that solve them.",
+        "\nTurning everyday problems into simple products that solve them.",
       highlights: [
         { value: "Year 3", label: "Vietnam–Japan IT, UIT" },
         { value: "3 tracks", label: "Web/App, Data, and AI" },
@@ -56,6 +57,17 @@ export const messages = {
       locationValue: "Ho Chi Minh City",
       timeTerm: "Time",
       handleTerm: "Handle",
+    },
+    education: {
+      heading: "Education",
+      leadBefore: "Building strong foundations from ",
+      leadHighlight: "campus to practice.",
+      schoolLabel: "University",
+      gpa10Label: "GPA (10-point)",
+      gpa4Label: "GPA (4-point)",
+      creditsLabel: "Credits completed",
+      creditsUnit: "credits",
+      credentialsHeading: "Degrees & Certificates",
     },
     projects: {
       heading: "Projects",
@@ -74,7 +86,6 @@ export const messages = {
       heading: "Skills",
       leadBefore: "Prioritizing clarity, from ",
       leadHighlight: "thinking to code.",
-      languagesHeading: "Languages",
     },
     contact: {
       heading: "Contact",
@@ -96,6 +107,7 @@ export const messages = {
     headerStatus: "SẴN SÀNG CHO CƠ HỘI MỚI",
     nav: {
       about: "Giới thiệu",
+      education: "Học tập",
       projects: "Dự án",
       skills: "Kỹ năng",
       contact: "Liên hệ",
@@ -114,8 +126,8 @@ export const messages = {
     backToTop: "Về đầu trang",
     opensInNewTab: " (mở tab mới)",
     hero: {
-      lead: "Sinh viên Công nghệ thông tin Việt – Nhật tại Trường Đại học Công nghệ Thông tin (UIT).",
-      sub: "Mình quan tâm đến Full-stack Web Developer, Data và AI/AI Agentic.",
+      lead: "Sinh viên Công nghệ thông tin Việt – Nhật\ntại Trường Đại học Công nghệ Thông tin (UIT).",
+      sub: "Mình quan tâm đến Backend Web Developer, Data và AI/AI Agentic.",
       viewProjects: "Xem dự án",
     },
     about: {
@@ -138,6 +150,17 @@ export const messages = {
       timeTerm: "Giờ",
       handleTerm: "Handle",
     },
+    education: {
+      heading: "Học tập",
+      leadBefore: "Xây nền tảng vững chắc từ ",
+      leadHighlight: "giảng đường đến thực tế.",
+      schoolLabel: "Đại học",
+      gpa10Label: "GPA hệ 10",
+      gpa4Label: "GPA hệ 4",
+      creditsLabel: "Tín chỉ tích lũy",
+      creditsUnit: "tín chỉ",
+      credentialsHeading: "Bằng cấp & Chứng chỉ",
+    },
     projects: {
       heading: "Dự án",
       leadBefore: "Hiện mình đang tập trung vào ",
@@ -155,7 +178,6 @@ export const messages = {
       heading: "Kỹ năng",
       leadBefore: "Ưu tiên sự rõ ràng, từ ",
       leadHighlight: "cách nghĩ đến dòng code.",
-      languagesHeading: "Ngoại ngữ",
     },
     contact: {
       heading: "Liên hệ",

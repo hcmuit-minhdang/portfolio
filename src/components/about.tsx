@@ -24,7 +24,7 @@ export function About() {
           </h2>
 
           <Reveal>
-            <p className="mt-6 text-[clamp(1.75rem,3.1vw,3.5rem)] leading-[1.22] font-medium tracking-tight text-pretty">
+            <p className="mt-6 text-[clamp(1.75rem,3.1vw,3.5rem)] leading-[1.22] font-medium tracking-tight whitespace-pre-line text-pretty">
               {t.about.leadBefore}
               <span className="text-highlight">{t.about.leadHighlight}</span>
               {t.about.leadAfter}
