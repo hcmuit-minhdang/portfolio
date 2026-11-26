@@ -49,7 +49,7 @@ export function ProfileCard() {
             {site.name}
           </p>
           <p className="text-xs font-medium text-ink-2">
-            IT @ UIT - SOFTWARE - DATA - AI/AI AGENTIC
+            IT @ UIT - WEB/APP - DATA - AI/AI AGENTIC
           </p>
 
           <dl className="mt-4 flex flex-wrap justify-between gap-x-4 gap-y-3 border-t border-dashed border-highlight pt-3">
