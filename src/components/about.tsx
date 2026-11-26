@@ -4,9 +4,36 @@ import { useLanguage } from "@/components/language-provider";
 import { Parallax } from "@/components/parallax";
 import { ProfileCard } from "@/components/profile-card";
 import { Reveal } from "@/components/reveal";
+import { projects } from "@/lib/projects";
+import { techStackGroups } from "@/lib/skills";
+
+const pad2 = (n: number) => String(n).padStart(2, "0");
+
+const totalTechCount = techStackGroups.reduce(
+  (sum, group) => sum + group.items.length,
+  0,
+);
 
 export function About() {
   const { t } = useLanguage();
+
+  const stats = [
+    {
+      value: "03",
+      label: t.about.highlights.yearLabel,
+      accent: true,
+    },
+    {
+      value: pad2(projects.length),
+      label: t.about.highlights.projectsLabel,
+      accent: false,
+    },
+    {
+      value: pad2(totalTechCount),
+      label: t.about.highlights.toolboxLabel,
+      accent: false,
+    },
+  ];
 
   return (
     <section
@@ -32,16 +59,22 @@ export function About() {
           </Reveal>
 
           <ul className="mt-12 grid border-t border-line pt-6 max-sm:gap-5 sm:grid-cols-3 sm:divide-x sm:divide-line lg:mt-auto">
-            {t.about.highlights.map(({ value, label }, index) => (
+            {stats.map(({ value, label, accent }, index) => (
               <li
                 key={index}
                 className="sm:px-4 xl:px-6 sm:first:pl-0 sm:last:pr-0"
               >
                 <Reveal delay={0.1 + index * 0.12}>
-                  <p className="font-display text-3xl leading-tight font-bold whitespace-nowrap xl:text-5xl xl:leading-tight">
+                  <p
+                    className={`font-display text-5xl leading-none font-bold tabular-nums xl:text-6xl ${
+                      accent ? "text-highlight" : "text-ink"
+                    }`}
+                  >
                     {value}
                   </p>
-                  <p className="mt-1 text-sm text-pretty text-ink-2">{label}</p>
+                  <p className="mt-2.5 text-xs font-medium tracking-wider text-ink-2 uppercase">
+                    {label}
+                  </p>
                 </Reveal>
               </li>
             ))}

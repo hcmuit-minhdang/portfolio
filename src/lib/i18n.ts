@@ -44,11 +44,11 @@ export const messages = {
       leadHighlight: "everything driven by logic.",
       leadAfter:
         "\nTurning everyday problems into simple products that solve them.",
-      highlights: [
-        { value: "Year 3", label: "Vietnam–Japan IT, UIT" },
-        { value: "3 tracks", label: "Web/App, Data, and AI" },
-        { value: "1 project", label: "Scientific research, in progress" },
-      ],
+      highlights: {
+        yearLabel: "Current year · IT UIT",
+        projectsLabel: "Featured projects",
+        toolboxLabel: "Technologies in toolbox",
+      },
     },
     profileCard: {
       year: "Year 3",
@@ -73,8 +73,7 @@ export const messages = {
       heading: "Projects",
       leadBefore: "Right now I'm focused on ",
       leadHighlight: "a research project.",
-      privateNote:
-        "Details are not public yet. I will share more once the research is complete.",
+      privateNote: "Details are not public yet.",
       viewPrefix: "View ",
       status: {
         done: "Completed",
@@ -136,11 +135,11 @@ export const messages = {
       leadHighlight: "những thứ liên quan đến logic.",
       leadAfter:
         " Biến những vấn đề trong cuộc sống thành những sản phẩm đơn giản giúp giải quyết nó.",
-      highlights: [
-        { value: "Năm 3", label: "Công nghệ thông tin Việt – Nhật, UIT" },
-        { value: "3 hướng", label: "Web/App, Data và AI" },
-        { value: "1 dự án", label: "Nghiên cứu khoa học, đang phát triển" },
-      ],
+      highlights: {
+        yearLabel: "Năm học hiện tại · IT UIT",
+        projectsLabel: "Dự án nổi bật",
+        toolboxLabel: "Công nghệ trong toolbox",
+      },
     },
     profileCard: {
       year: "Năm 3",
@@ -165,8 +164,7 @@ export const messages = {
       heading: "Dự án",
       leadBefore: "Hiện mình đang tập trung vào ",
       leadHighlight: "một dự án nghiên cứu.",
-      privateNote:
-        "Nội dung chưa được công bố. Mình sẽ chia sẻ khi nghiên cứu hoàn thành.",
+      privateNote: "Nội dung chưa được công bố.",
       viewPrefix: "Xem ",
       status: {
         done: "Hoàn thành",
