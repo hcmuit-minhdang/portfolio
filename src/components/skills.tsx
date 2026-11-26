@@ -2,7 +2,40 @@
 
 import { useLanguage } from "@/components/language-provider";
 import { Reveal } from "@/components/reveal";
-import { languages, skillGroups } from "@/lib/skills";
+import { techStackGroups, type SkillIcon } from "@/lib/skills";
+
+function GroupIcon({ icon }: { icon: SkillIcon }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="grid size-11 shrink-0 place-items-center rounded-xl border border-line bg-bg text-ink"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="size-5 fill-none stroke-current stroke-2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {icon === "code" && <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />}
+        {icon === "database" && (
+          <>
+            <ellipse cx="12" cy="5" rx="9" ry="3" />
+            <path d="M3 5v14a9 3 0 0 0 18 0V5" />
+            <path d="M3 12a9 3 0 0 0 18 0" />
+          </>
+        )}
+        {icon === "server" && (
+          <>
+            <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+            <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+            <line x1="6" x2="6.01" y1="6" y2="6" />
+            <line x1="6" x2="6.01" y1="18" y2="18" />
+          </>
+        )}
+      </svg>
+    </span>
+  );
+}
 
 export function Skills() {
   const { locale, t } = useLanguage();
@@ -28,36 +61,50 @@ export function Skills() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 md:mt-12 md:grid-cols-2">
-          {skillGroups.map((group, index) => (
+        <div className="mt-10 grid gap-6 md:mt-12 lg:grid-cols-3">
+          {techStackGroups.map((group, index) => (
             <Reveal
               key={group.title.en}
               delay={index * 0.08}
               className="grid h-full"
             >
-              <div className="card-lift flex h-full flex-col rounded-3xl border border-line bg-surface p-6 md:p-8">
-                <h3 className="font-display text-2xl leading-snug font-bold">
+              <article className="card-lift flex h-full flex-col rounded-3xl border border-line bg-surface p-6 md:p-8">
+                <GroupIcon icon={group.icon} />
+
+                <h3 className="mt-5 font-display text-2xl leading-snug font-bold text-highlight">
                   {group.title[locale]}
                 </h3>
-                {group.description && (
-                  <p className="mt-2 text-pretty text-ink-2">
-                    {group.description[locale]}
-                  </p>
-                )}
-                <ul className="mt-6 flex flex-wrap gap-3">
+
+                <p className="mt-3 text-pretty text-ink-2">
+                  {group.description[locale]}
+                </p>
+
+                <ul className="mt-auto flex flex-wrap gap-2.5 pt-6">
                   {group.items.map((item) => {
                     const label =
                       typeof item.name === "string"
                         ? item.name
                         : item.name[locale];
+                    const key =
+                      typeof item.name === "string" ? item.name : item.name.en;
                     return (
                       <li
-                        key={typeof item.name === "string" ? item.name : item.name.en}
-                        className="inline-flex items-baseline gap-2 rounded-full border border-line bg-bg px-4 py-2 font-medium"
+                        key={key}
+                        className={`inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-medium ${
+                          item.core
+                            ? "bg-accent text-accent-ink"
+                            : "border border-line bg-bg text-ink"
+                        }`}
                       >
                         <span>{label}</span>
                         {item.note && (
-                          <span className="text-sm font-normal text-ink-2">
+                          <span
+                            className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                              item.core
+                                ? "bg-accent-ink/15 text-accent-ink"
+                                : "text-ink-2"
+                            }`}
+                          >
                             {item.note[locale]}
                           </span>
                         )}
@@ -65,36 +112,9 @@ export function Skills() {
                     );
                   })}
                 </ul>
-              </div>
+              </article>
             </Reveal>
           ))}
-
-          <Reveal delay={skillGroups.length * 0.08} className="grid h-full">
-            <div className="card-lift flex h-full flex-col rounded-3xl border border-line bg-surface p-6 md:p-8">
-              <h3 className="font-display text-2xl leading-snug font-bold">
-                {t.skills.languagesHeading}
-              </h3>
-              <ul className="mt-4 divide-y divide-line">
-                {languages.map((item) => {
-                  const label =
-                    typeof item.name === "string"
-                      ? item.name
-                      : item.name[locale];
-                  return (
-                    <li
-                      key={typeof item.name === "string" ? item.name : item.name.en}
-                      className="flex flex-wrap items-baseline justify-between gap-2 py-4 first:pt-2 last:pb-0"
-                    >
-                      <span className="text-lg font-medium">{label}</span>
-                      {item.note && (
-                        <span className="text-ink-2">{item.note[locale]}</span>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>
