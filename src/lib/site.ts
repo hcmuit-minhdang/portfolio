@@ -9,7 +9,7 @@ export const site = {
   facebook: "https://www.facebook.com/minhdanguit",
   // Ảnh thẻ cá nhân (About) và ảnh khung Hero.
   photo: "/card-photo.jpg" as string | null,
-  heroPhoto: "/hero-photo.jpg" as string | null,
+  heroPhoto: "/avatar.jpg" as string | null,
   nav: [
     { href: "/#gioi-thieu", key: "about" as const },
     { href: "/#hoc-tap", key: "education" as const },

@@ -99,9 +99,9 @@ export function Hero() {
                       src={site.heroPhoto}
                       alt={t.profileCard.photoAlt(site.name)}
                       fill
-                      priority
+                      preload
                       sizes="(min-width: 80rem) 26rem, (min-width: 64rem) 22rem, 90vw"
-                      className="object-cover"
+                      className="object-cover object-bottom"
                     />
                   ) : (
                     <div
